@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Page</title>
+</head>
+<body>
+    <h1>Welcome to the Welcome Page!</h1>
+    <p>You are now logged in.</p>
+    <p>Welcome to the protected page, {{ current_user.id }}!</p>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

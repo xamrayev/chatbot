@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
+</head>
+
+
+<body>
+  <div class="content ">
+
+  <form action="{{ url_for('chatbot') }}" method="post">
+
+
+    <div class="box">
+
+      <article class="message">
+
+        <div class="message-header">
+
+          <p>Chat Bot</p>
+
+          <button class="delete" aria-label="delete"></button>
+
+        </div>
+
+        <div class="message-body">
+
+          {{ string |safe }}
+
+        </div>
+
+      </article>
+      <input class="input is-primary" type="text" placeholder="Primary input" id="zapros" name="zapros">
+
+      <button type="submit" class="button mt-3">Submit</button>
+      <a href="{{ url_for('logout') }}" class="button mt-3">Quit</a>
+
+    </div>
+
+
+  </form>
+
+</div>
+<script>
+
+  window.onbeforeunload = function() {
+  
+      document.getElementById('zapros').value = '';
+  
+  };
+  
+  </script>
+</body>
+</html>
